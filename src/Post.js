@@ -15,10 +15,10 @@ import { useStateValue } from './StateProvider';
 function Post({ id,profilePic, image, username, timestamp, message,likes }) {
      const [comments, setComments] = useState([])
     const [{ user }, dispatch] = useStateValue()
-
+    console.log(likes)
 
     useEffect(() => {
-        db.collection('posts').doc(id).collection('comments')?.onSnapshot((snapshot) =>
+        db.collection('posts').doc(id).collection('comments').onSnapshot((snapshot) =>
             setComments(snapshot.docs.map((doc) => {
                 console.log(doc.data())
                 return { id: doc.id, data: doc.data() }
@@ -61,8 +61,8 @@ function Post({ id,profilePic, image, username, timestamp, message,likes }) {
                 
                     {
                         likes.includes(user.displayName)?  <><div class="post__option" onClick={handleClickDislike}><ThumbUpIcon />
-                    <p>{likes.length - 1} Dislike</p></div></> :  <><div class="post__option" onClick={handleClickLike} ><ThumbUpIcon />
-                    <p>{likes.length - 1} Like</p></div></>
+                    <p>{likes.length} Dislike</p></div></> :  <><div class="post__option" onClick={handleClickLike} ><ThumbUpIcon />
+                    <p>{likes.length} Like</p></div></>
                     } 
                 
                 <div class="post__option">
