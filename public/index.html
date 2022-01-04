@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="%PUBLIC_URL%/logoKarriery.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -24,7 +24,23 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Karriery Social Media</title>
+    <script
+      src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"
+      async=""
+    ></script>
+    <script>
+      window.OneSignal = window.OneSignal || [];
+      OneSignal.push(function () {
+        OneSignal.init({
+          appId: "aee2db32-157d-4adf-97df-3c3b4fb0ab2e",
+          safari_web_id: "",
+          notifyButton: {
+            enable: true,
+          },
+        });
+      });
+    </script>
   </head>
 
   <body>

@@ -1,7 +1,7 @@
 {
-  "name": "facebook",
-  "version": "0.1.0",
+  "name": "facebookclone-ing5c",
   "private": true,
+  "user": "SamyBChaalia",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
@@ -13,6 +13,7 @@
     "react": "^16.13.1",
     "react-bootstrap": "^2.1.0",
     "react-dom": "^16.13.1",
+    "react-onesignal": "^2.0.2",
     "react-scripts": "3.4.3"
   },
   "scripts": {

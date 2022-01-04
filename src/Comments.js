@@ -1,18 +1,26 @@
 import React from 'react'
-import "./Comment.css"
+import "./MessageSender.css"
+import { useStateValue } from './StateProvider';
+import { Avatar } from '@material-ui/core'
 export default function Comments({comment,
             timestamp,
             profilePic,
             username,id}) {
     return (
         <>
-            <div className="d-flex justify-content-center py-2" style={{width:"100%"}}>
-        <div className="second py-2 px-2"> <span class="text1">{comment}</span>
-            <div className="d-flex justify-content-between py-1 pt-2">
-                <div><img src={profilePic} width="18"/><span class="text2">{username}</span></div>
+           
+     <div className="messageSender" style={{margin:"0"}}>
+            <div class="messageSender__top">
+                <Avatar src={profilePic} />
+                <form>
+                    <input value={comment} disabled={true}
+                        style={{width:"100%"}} />
+                 
+
+                </form>
+            
             </div>
         </div>
-    </div>
         </>
     )
 }
