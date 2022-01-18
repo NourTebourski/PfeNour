@@ -3,12 +3,9 @@ import { Avatar } from "@material-ui/core";
 import "./MessageSender.css";
 import VideocamIcon from "@material-ui/icons/Videocam";
 import PhotoLibraryIcon from "@material-ui/icons/PhotoLibrary";
-import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
-import { useStateValue } from "./StateProvider";
-import db from "./firebase";
-import { firebase } from "./firebase";
-import Upload from "./upload";
-import { AlternateEmail } from "@material-ui/icons";
+import { useStateValue } from "../../utils/StateProvider";
+import db from "../../utils/firebase";
+import { firebase } from "../../utils/firebase";
 
 function MessageSender() {
   const [{ user }, dispatch] = useStateValue();
