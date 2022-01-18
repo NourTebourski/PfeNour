@@ -2,8 +2,11 @@
   display: flex;
   align-items: center;
   padding: 10px;
+  font-size: medium;
+  font-family: Arial, Helvetica, sans-serif;
   cursor: pointer;
   transition: 0.5s;
+  margin-top: 25px;
 }
 .sidebarRow:hover {
   background: #dfdfdf;
@@ -12,6 +15,7 @@
 .sidebarRow h4 {
   margin-left: 28px;
   font-weight: 600;
+  font-size: medium;
 }
 .sidebarRow .MuiSvgIcon-root {
   font-size: xx-large;
