@@ -6,7 +6,7 @@ import ChatBubbleOutlineOutlinedIcon from "@material-ui/icons/ChatBubbleOutlineO
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import NearMeIcon from "@material-ui/icons/NearMe";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import db from "../../utils/firebase";
+import { db } from "../../utils/firebase";
 import AddComment from "../addComment/AddComment";
 import Comments from "../Comments/Comments";
 import { firebase } from "../../utils/firebase";

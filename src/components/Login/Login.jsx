@@ -1,11 +1,10 @@
 import { Button } from "@material-ui/core";
-import React from "react";
 import "./Login.css";
-import { auth, provider } from "../../utils/firebase";
+import { auth, db, provider } from "../../utils/firebase";
 import { actionTypes } from "../../utils/Reducer";
 import { useStateValue } from "../../utils/StateProvider";
-
-function Login() {
+import React, { useRef } from "react";
+function Login({ setUser }) {
   const [state, dispatch] = useStateValue();
 
   const signIn = () => {
@@ -17,10 +16,28 @@ function Login() {
           type: actionTypes.SET_USER,
           user: result.user,
         });
-        console.log(result.user);
+        saveUser({
+          name: result.user.displayName,
+          photo: result.user.photoURL,
+          uid: result.user.uid,
+          email: result.user.email,
+        });
       })
       .catch((error) => alert(error.message));
   };
+  const saveUser = async (user) => {
+    const a = await db.collection("users").doc(user.uid).set(user);
+    localStorage.setItem("user", JSON.stringify(user));
+    setUser(user);
+  };
+  React.useEffect(() => {
+    // get user from localstorage
+    const user = JSON.parse(localStorage.getItem("user"));
+
+    if (user) {
+      setUser(user);
+    }
+  }, [setUser]);
 
   return (
     <div className="login">

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Feed.css";
 import MessageSender from "../MessageSender/MessageSender";
 import Post from "../Post/Post";
-import db from "../../utils/firebase";
+import { db } from "../../utils/firebase";
 
 function Feed() {
   const [posts, setPosts] = useState([]);

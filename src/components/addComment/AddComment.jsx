@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../MessageSender/MessageSender.css";
 import { useStateValue } from "../../utils/StateProvider";
 import { Avatar } from "@material-ui/core";
-import db from "../../utils/firebase";
+import { db } from "../../utils/firebase";
 import { firebase } from "../../utils/firebase";
 
 export default function AddComment({ id }) {

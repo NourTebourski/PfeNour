@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import Feed from "./components/Feed/Feed";
 import Header from "./components/Header/Header";
@@ -7,27 +7,25 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import { useStateValue } from "./utils/StateProvider";
 import Widgets from "./components/Widgets/Widgets";
 import OneSignal from "react-onesignal";
+import ChatScreen from "./components/ChatScreen/ChatScreen";
 
 function App() {
   const [{ user }, dispatch] = useStateValue();
-  useEffect(() => {
-    OneSignal.init({
-      appId: "aee2db32-157d-4adf-97df-3c3b4fb0ab2e",
-    });
-  }, []);
+  const [user2, setUser] = useState();
   return (
     // Bem
     <div className="app">
       {!user ? (
-        <Login />
+        <Login user={user2} setUser={setUser} />
       ) : (
         <>
           <Header />
 
           <div className="app__body">
-            <Sidebar />
+            {/* <Sidebar />
             <Feed />
-            <Widgets />
+            <Widgets /> */}
+            <ChatScreen user={user2} setUser={setUser} />
           </div>
         </>
       )}

@@ -4,7 +4,7 @@ import "./MessageSender.css";
 import VideocamIcon from "@material-ui/icons/Videocam";
 import PhotoLibraryIcon from "@material-ui/icons/PhotoLibrary";
 import { useStateValue } from "../../utils/StateProvider";
-import db from "../../utils/firebase";
+import { db } from "../../utils/firebase";
 import { firebase } from "../../utils/firebase";
 
 function MessageSender() {
