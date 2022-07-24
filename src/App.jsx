@@ -8,28 +8,27 @@ import { useStateValue } from "./utils/StateProvider";
 import Widgets from "./components/Widgets/Widgets";
 import OneSignal from "react-onesignal";
 import ChatScreen from "./components/ChatScreen/ChatScreen";
+import { Route, Switch } from "react-router-dom";
 
 function App() {
   const [{ user }, dispatch] = useStateValue();
   const [user2, setUser] = useState();
-  return (
-    // Bem
-    <div className="app">
-      {!user ? (
-        <Login user={user2} setUser={setUser} />
-      ) : (
-        <>
-          <Header />
-
-          <div className="app__body">
-            {/* <Sidebar />
+  return !user ? (
+    <Login user={user2} setUser={setUser} />
+  ) : (
+    <>
+      <>
+        <Header />
+        <div className="app__body">
+          <>
+            <Sidebar />
             <Feed />
-            <Widgets /> */}
-            <ChatScreen user={user2} setUser={setUser} />
-          </div>
-        </>
-      )}
-    </div>
+          </>
+
+          <Widgets user={user2} setUser={setUser} />
+        </div>
+      </>
+    </>
   );
 }
 

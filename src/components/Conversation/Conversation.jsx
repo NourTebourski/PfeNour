@@ -2,6 +2,8 @@ import React, { useRef, useState } from "react";
 
 import { db } from "../../utils/firebase";
 import "./conversation.css";
+import { Avatar } from "@material-ui/core";
+
 import {
   FaCommentAlt,
   FaComments,
@@ -24,7 +26,6 @@ export default function Conversation({ receiver, user }) {
   // handle sending the messages
   const sendMessage = async () => {
     if (!currentMessage.current.value) return;
-    console.log("i'm geher");
     const myMessage = {
       message: currentMessage.current.value,
       uid: user.uid,
@@ -112,15 +113,9 @@ export default function Conversation({ receiver, user }) {
           <div className="user-conversation-header">
             <div className="user-conv-header-container">
               <div className="user-profile-pic-container">
-                <p className="user-profile-pic-text">{receiver.email[0]}</p>
+                <Avatar src={receiver.photo} />
               </div>
-              <p>{receiver.email}</p>
-            </div>
-
-            <div className="user-conv-header-container">
-              <FaPhone color="dodgerblue" size="2vh" />
-              <FaVideo color="dodgerblue" size="2vh" />
-              <FaInfoCircle color="dodgerblue" size="2vh" />
+              <div className="username">{receiver.name} </div>
             </div>
           </div>
 
@@ -148,18 +143,26 @@ export default function Conversation({ receiver, user }) {
 
           {/* Input bar */}
           <div className="input-container">
-            <FaPlusCircle />
-            <FaImage />
-            <FaStickyNote />
             <div className="input-message">
-              <input
-                placeholder="Hi.."
-                ref={currentMessage}
-                onKeyPress={handleEnterKeyPressDown}
-              />
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                  placeholder="write your message here  "
+                  ref={currentMessage}
+                  onKeyPress={handleEnterKeyPressDown}
+                />
+              </div>
             </div>
-            <button onClick={sendMessage}>Send</button>
-            <FaThumbsUp />
+            <button
+              type="button"
+              onClick={sendMessage}
+              class="btn btn-outline-primary"
+            >
+              Send
+            </button>
           </div>
         </div>
       ) : (
@@ -167,7 +170,7 @@ export default function Conversation({ receiver, user }) {
           <div>
             <FaCommentAlt />
           </div>
-          <p>Pick someone to talk to.</p>
+          <p>Click on the Collegue that you want to talk with</p>
         </div>
       )}
     </div>

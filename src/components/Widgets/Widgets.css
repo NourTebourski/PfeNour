@@ -1,4 +1,15 @@
-.widgets {
-  margin-top: 90px;
-  margin-left: -80px;
+.container-absolute {
+  position: fixed;
+  z-index: 99;
+  bottom: 0%;
+  right: 1%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.closeButton {
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  z-index: 100;
 }

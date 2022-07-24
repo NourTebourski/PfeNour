@@ -20,44 +20,20 @@ function Header() {
     <div className="header">
       <div className="header__left">
         <img src="logoKarriery.png" alt="" />
-        <div className="header__input">
-          <SearchIcon />
-          <input type="text" placeholder="Search Facebook" />
-        </div>
+        <div className="titlewebsite">Nour PFE Employee Comunications</div>
       </div>
-      <div className="header__center">
-        <div className="header__option header__option--active">
-          <HomeIcon fontSize="large" />
-        </div>
-        <div className="header__option">
-          <FlagIcon fontSize="large" />
-        </div>
-        <div className="header__option">
-          <SubscriptionsOutlinedIcon fontSize="large" />
-        </div>
-        <div className="header__option">
-          <StoreIcon fontSize="large" />
-        </div>
-        <div className="header__option">
-          <SupervisedUserCircleIcon fontSize="large" />
-        </div>
-      </div>
+
       <div className="header__right">
         <div class="header__info">
           <Avatar src={user.photoURL} />
           <h4>{user.displayName}</h4>
         </div>
-        <IconButton>
-          <AddIcon />
-        </IconButton>
+
         <IconButton>
           <ForumIcon />
         </IconButton>
         <IconButton>
           <NotificationsActiveIcon />
-        </IconButton>
-        <IconButton>
-          <ExpandMoreIcon />
         </IconButton>
       </div>
     </div>

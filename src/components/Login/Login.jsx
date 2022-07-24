@@ -26,8 +26,17 @@ function Login({ setUser }) {
       .catch((error) => alert(error.message));
   };
   const saveUser = async (user) => {
+    console.log("executedhere");
     const a = await db.collection("users").doc(user.uid).set(user);
-    localStorage.setItem("user", JSON.stringify(user));
+    localStorage.setItem(
+      "user",
+      JSON.stringify({
+        displayName: user.displayName,
+        photoURL: user.photoURL,
+        uid: user.uid,
+        email: user.email,
+      })
+    );
     setUser(user);
   };
   React.useEffect(() => {

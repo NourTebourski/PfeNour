@@ -5,11 +5,16 @@ import App from "./App";
 import * as serviceWorker from "./utils/serviceWorker";
 import { StateProvider } from "./utils/StateProvider";
 import reducer, { initialState } from "./utils/Reducer";
+import { Router } from "react-router";
+import { createBrowserHistory } from "history";
+const history = createBrowserHistory();
 
 ReactDOM.render(
   <React.StrictMode>
     <StateProvider initialState={initialState} reducer={reducer}>
-      <App />
+      <Router history={history}>
+        <App />
+      </Router>
     </StateProvider>
   </React.StrictMode>,
   document.getElementById("root")

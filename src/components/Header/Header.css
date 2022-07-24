@@ -16,6 +16,12 @@
   display: flex;
   justify-content: center;
 }
+.titlewebsite {
+  color: cornflowerblue;
+  margin: 10px;
+  font-size: 15px;
+  font-weight: 600;
+}
 .header__input {
   display: flex;
   align-items: center;

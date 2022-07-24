@@ -1,20 +1,15 @@
 import React from "react";
 import { FaEdit, FaEllipsisH, FaVideo } from "react-icons/fa";
 import "./ChatHeads.css";
-
+import { Avatar } from "@material-ui/core";
 export default function ChatHeads({ items, setReceiver }) {
   console.log(items);
   return (
     <div>
       <div className="conv-header-container">
         <p className="conversations-header">Conversations</p>
-        <div>
-          <FaEllipsisH />
-          <FaVideo />
-          <FaEdit />
-        </div>
       </div>
-      <input className="chat-heads-search" placeholder="Search in Messenger" />
+
       <div className="chat-heads-container">
         {items.map((obj, i) => (
           <div
@@ -22,10 +17,16 @@ export default function ChatHeads({ items, setReceiver }) {
             className="chat-head-item"
             onClick={() => setReceiver(obj)}
           >
-            <div className="user-profile-pic-container">
-              <p className="user-profile-pic-text">{obj.email[0]}</p>
+            <div class="d-flex flex-row">
+              <div className="  ">
+                <Avatar
+                  src={obj.photo}
+                  style={{ height: "50px", width: "50px" }}
+                />
+              </div>
+
+              <div className="username">{obj.name}</div>
             </div>
-            <p>{obj.email}</p>
           </div>
         ))}
       </div>
